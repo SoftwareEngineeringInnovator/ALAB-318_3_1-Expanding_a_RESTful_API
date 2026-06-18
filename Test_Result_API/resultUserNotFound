@@ -1,7 +1,0 @@
-// Method: GET
-// Task: Test user number greater than the number of existing users
-// Link http://localhost:3000/api/users/79/posts?api-key=perscholas
-
-{
-  "error": "User Not Found"
-}

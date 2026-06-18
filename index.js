@@ -1,8 +1,8 @@
+// import section
 import express from 'express'
-
 import users from './routes/users.js'
 import posts from './routes/posts.js'
-
+import comments from './routes/comments.js'
 import error from './utilities/error.js'
 
 const app = express();
@@ -52,6 +52,7 @@ app.use("/api", function (req, res, next) {
 // Use our Routes
 app.use("/api/users", users);
 app.use("/api/posts", posts);
+app.use("/api/comments", comments);
 
 // Adding some HATEOAS links.
 app.get("/", (req, res) => {
