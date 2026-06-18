@@ -1,0 +1,6 @@
+// Method: GET
+// Task: create route for comments
+// Link: http://localhost:3000/api/comments?api-key=perscholas
+{
+  "comments": []
+}
