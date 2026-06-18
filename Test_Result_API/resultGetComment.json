@@ -1,0 +1,36 @@
+// Method: GET
+// Task: Get comment created by Post method
+// Link: http://localhost:3000/api/comments?api-key=perscholas
+
+{
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "postId": 2,
+      "body": "This is my first comment for the REST API lab."
+    }
+  ]
+}
+
+// GET Method
+
+// Status: 200 OK
+// Size: 101 Bytes
+// Time: 13 ms
+
+// {
+//   "comments": [
+//     {
+//       "id": 1,
+//       "userId": 1,
+//       "postId": 2,
+//       "body": "This is my first comment for the REST API lab."
+//     }
+//   ]
+// }
+
+/*
+3:50:30 PM: Received a GET request to /api/comments?api-key=perscholas.
+Containing the data:
+{"userId":1,"postId":2,"body":"This is my first comment for the REST API lab."} *\

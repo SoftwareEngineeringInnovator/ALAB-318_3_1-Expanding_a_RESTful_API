@@ -35,4 +35,25 @@ router
     }
   });
 
+  router
+  .route("/:id")
+  .get((req, res, next) => {
+
+    // GET /api/comments/:id, get comments by ids
+    const commentId = Number(req.params.id);
+
+    // Find the comment where the id matches the id from the URL.
+    const comment = comments.find((comment) => comment.id === commentId);
+
+    // If the comment exists, send it back.
+    if (comment) {
+      res.json({
+        comment,
+      });
+    } else {
+      // If the comment does not exist, send a 404 error.
+      next(error(404, "Comment Not Found"));
+    }
+  });
+
 export default router;
