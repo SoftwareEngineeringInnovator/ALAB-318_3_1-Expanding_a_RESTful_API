@@ -1,6 +1,6 @@
 // Method: GET
 // Task: get all post to belong to specific user ID. Testing user id = 1
-// http://localhost:3000/api/users/1/posts?api-key=perscholas
+// Link: http://localhost:3000/api/users/1/posts?api-key=perscholas
 
 {
   "user": {

@@ -3,7 +3,8 @@ const router = express.Router()
 
 import users from '../data/users.js'
 import error from '../utilities/error.js'
-import posts from '../data/posts.js' // This import will alow user to look inside the post array
+ // This import will alow user to look inside the post array
+import posts from '../data/posts.js'
 
 router
   .route("/")
