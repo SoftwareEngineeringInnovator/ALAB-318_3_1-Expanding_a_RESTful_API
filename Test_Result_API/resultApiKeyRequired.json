@@ -1,0 +1,7 @@
+// Method: GET
+// Task: verify use of API key
+// Link: http://localhost:3000/api/users
+
+{
+  "error": "API Key Required"
+}
