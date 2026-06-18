@@ -14,7 +14,20 @@ router
         type: "GET",
       },
     ];
+    // req.query allow us to read values from the URL after the ? symbol.
+    const userId = req.query.userId;
 
+    // Return posts for that user.
+    if (userId) {
+      const filteredPosts = posts.filter((post) => post.userId === Number(userId));
+
+      return res.json({
+        posts: filteredPosts,
+        links,
+      });
+    }
+
+    // Return all posts
     res.json({ posts, links });
   })
   .post((req, res, next) => {
