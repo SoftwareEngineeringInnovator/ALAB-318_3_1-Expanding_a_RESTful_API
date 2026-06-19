@@ -66,6 +66,7 @@ router.get("/:id/posts", (req, res, next) => {
 // GET /api/users/:id/comments, gets all comments created by a user.
 router.get("/:id/comments", (req, res, next) => {
   const userId = Number(req.params.id);
+  const postId = req.query.postId;
 
   // First, check if the user exists.
   const user = users.find((user) => user.id === userId);
@@ -76,7 +77,14 @@ router.get("/:id/comments", (req, res, next) => {
   }
 
   // Provide comments where the userId matches with the user id from the URL.
-  const userComments = comments.filter((comment) => comment.userId === userId);
+  let userComments = comments.filter((comment) => comment.userId === userId);
+
+     // Filter again the user.
+  if (postId) {
+    userComments = userComments.filter(
+      (comment) => comment.postId === Number(postId)
+    );
+  }
 
   res.json({
     user,

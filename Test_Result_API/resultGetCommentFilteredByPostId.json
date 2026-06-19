@@ -1,0 +1,25 @@
+// Method: GET
+// Task: GET user comments filtered by post id
+// Link: http://localhost:3000/api/comments?api-key=perscholas
+{
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "postId": 2,
+      "body": "Comment from user 1 on post 2."
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "postId": 2,
+      "body": "Comment from user 2 on post 2."
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "postId": 3,
+      "body": "Comment from user 1 on post 3."
+    }
+  ]
+}
