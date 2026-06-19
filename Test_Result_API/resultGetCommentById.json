@@ -1,0 +1,28 @@
+// Method: GET
+// Task: GET comment by suing ID
+// Link: http://localhost:3000/api/comments/1?api-key=perscholas
+{
+  "comment": {
+    "id": 1,
+    "userId": 1,
+    "postId": 2,
+    "body": "This is my first comment."
+  }
+}
+
+// GET Method
+
+// Status: 200 OK
+// Size: 77 Bytes
+// Time: 43 ms
+
+// RESULTS:
+
+// {
+//   "comment": {
+//     "id": 1,
+//     "userId": 1,
+//     "postId": 2,
+//     "body": "This is my first comment."
+//   }
+// }

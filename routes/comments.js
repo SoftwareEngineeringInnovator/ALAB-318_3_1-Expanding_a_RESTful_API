@@ -54,6 +54,31 @@ router
       // If the comment does not exist, send a 404 error.
       next(error(404, "Comment Not Found"));
     }
+  })
+
+  .patch((req, res, next) => {
+    
+    // PATCH /api/comments/:id, updates the body of one specific comment
+    const commentId = Number(req.params.id);
+
+    // Find the index of the comment we want to update.
+    const commentIndex = comments.findIndex((comment) => comment.id === commentId);
+
+    // If findIndex returns -1, that means the comment was not found
+    if (commentIndex === -1) {
+      return next(error(404, "Comment Not Found"));
+    }
+
+    // Return an error if the body is not provided for the update
+    if (!req.body.body) {
+      return next(error(400, "Comment body is required"));
+    }
+
+    // Update only the body of the comment.
+    comments[commentIndex].body = req.body.body;
+
+    // Send back the updated comment so we can confirm the change.
+    res.json(comments[commentIndex]);
   });
 
 export default router;
