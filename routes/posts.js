@@ -47,6 +47,7 @@ router
  // GET /api/posts/:id/comments, gets all comments specific post.
 router.get("/:id/comments", (req, res, next) => {
   const postId = Number(req.params.id);
+  const userId = req.query.userId;
 
   // First, check if the post exists.
   const post = posts.find((post) => post.id === postId);
@@ -56,8 +57,15 @@ router.get("/:id/comments", (req, res, next) => {
     return next(error(404, "Post Not Found"));
   }
 
-  // Find all comments where the postId matches the post id from the URL.
-  const postComments = comments.filter((comment) => comment.postId === postId);
+  // Get comments for this post.
+  let postComments = comments.filter((comment) => comment.postId === postId);
+
+  // Filter again the user.
+  if (userId) {
+    postComments = postComments.filter(
+      (comment) => comment.userId === Number(userId)
+    );
+  }
 
   res.json({
     post,
