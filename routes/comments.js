@@ -79,6 +79,27 @@ router
 
     // Send back the updated comment so we can confirm the change.
     res.json(comments[commentIndex]);
-  });
+  
+})
 
+  .delete((req, res, next) => {
+    
+    // DELETE /api/comments/:id, deletes comment by its id.
+    const commentId = Number(req.params.id);
+
+    // Find the index of the comment we want to delete.
+    const commentIndex = comments.findIndex((comment) => comment.id === commentId);
+
+    // If the comment does not exist, send a 404 error.
+    if (commentIndex === -1) {
+      return next(error(404, "Comment Not Found"));
+    }
+
+    // Remove the comment from the array.
+    // splice returns an array, so we use [0] to get the deleted comment object.
+    const deletedComment = comments.splice(commentIndex, 1)[0];
+
+    // Send back the deleted comment so we can confirm what was removed.
+    res.json(deletedComment);
+  });
 export default router;

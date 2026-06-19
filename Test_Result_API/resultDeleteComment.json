@@ -1,0 +1,9 @@
+// Method: 
+// Post => http://localhost:3000/api/comments?api-key=perscholas
+// then Get => http://localhost:3000/api/comments/1?api-key=perscholas
+// then Delete => http://localhost:3000/api/comments/1?api-key=perscholas
+// Task: Delete a comment by using ID
+// Link: http://localhost:3000/api/comments/1?api-key=perscholas
+{
+  "error": "Comment Not Found"
+}

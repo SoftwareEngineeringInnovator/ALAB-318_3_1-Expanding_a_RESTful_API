@@ -1,0 +1,26 @@
+// Method: Post
+// Task: create and post a comment
+// Link: http://localhost:3000/api/comments?api-key=perscholas
+{
+  "id": 2,
+  "userId": 1,
+  "postId": 2,
+  "body": "This is my first comment for the REST API lab."
+}
+
+// JSON POST
+
+// Status: 201 Created
+// Size: 86 Bytes
+// Time: 30 ms
+
+// {
+//   "userId": 1,
+//   "postId": 2,
+//   "body": "This is my first comment for the REST API lab."
+// }
+
+
+/*3:50:08 PM: Received a POST request to /api/comments?api-key=perscholas.
+Containing the data:
+{"userId":1,"postId":2,"body":"This is my first comment for the REST API lab."} *\

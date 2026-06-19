@@ -1,0 +1,12 @@
+// Method: GET
+// Task: GET comment by suing invalid ID
+// Link: http://localhost:3000/api/comments/1?api-key=perscholas
+{
+  "error": "Comment Not Found"
+}
+
+// RESULTS:
+
+// Status: 404 Not Found
+// Size: 29 Bytes
+// Time: 358 ms

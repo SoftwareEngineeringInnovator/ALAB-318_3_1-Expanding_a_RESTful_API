@@ -1,0 +1,9 @@
+// Method: PATCH
+// Task: update a comment, this instance was the body
+// Link: http://localhost:3000/api/comments/1?api-key=perscholas
+{
+  "id": 1,
+  "userId": 1,
+  "postId": 2,
+  "body": "This is a Patch updated."
+}
