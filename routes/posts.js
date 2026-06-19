@@ -1,8 +1,8 @@
 import express from 'express'
 const router = express.Router();
-
 import posts from '../data/posts.js';
 import error from '../utilities/error.js';
+import comments from '../data/comments.js';
 
 router
   .route("/")
@@ -43,6 +43,27 @@ router
       res.json(posts[posts.length - 1]);
     } else next(error(400, "Insufficient Data"));
   });
+
+// GET /api/posts/:id/comments, gets all comments specific post.
+router.get("/:id/comments", (req, res, next) => {
+  const postId = Number(req.params.id);
+
+  // First, check if the post exists.
+  const post = posts.find((post) => post.id === postId);
+
+  // If the post does not exist, send a 404 error.
+  if (!post) {
+    return next(error(404, "Post Not Found"));
+  }
+
+  // Find all comments where the postId matches the post id from the URL.
+  const postComments = comments.filter((comment) => comment.postId === postId);
+
+  res.json({
+    post,
+    comments: postComments,
+  });
+});
 
 router
   .route("/:id")

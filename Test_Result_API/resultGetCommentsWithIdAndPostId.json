@@ -1,0 +1,25 @@
+// Method: Get
+// Task: get comments with ID 2, and postID 2
+// Link: http://localhost:3000/api/posts/2/comments?api-key=perscholas
+{
+  "post": {
+    "id": 2,
+    "userId": 1,
+    "title": "quasi id et eos tenetur aut quo autem",
+    "content": "eum sed dolores ipsam sint possimus debitis occaecati\ndebitis qui qui et\nut placeat enim earum aut odit facilis\nconsequatur suscipit necessitatibus rerum sed inventore temporibus consequatur"
+  },
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "postId": 2,
+      "body": "Comment from user 1 on post 2."
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "postId": 2,
+      "body": "Comment from user 2 on post 2."
+    }
+  ]
+}
