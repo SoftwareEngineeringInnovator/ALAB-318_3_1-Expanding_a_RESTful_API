@@ -5,6 +5,7 @@ import users from '../data/users.js'
 import error from '../utilities/error.js'
  // This import will alow user to look inside the post array
 import posts from '../data/posts.js'
+import comments from '../data/comments.js'
 
 router
   .route("/")
@@ -59,6 +60,27 @@ router.get("/:id/posts", (req, res, next) => {
   res.json({
     user,
     posts: userPosts,
+  });
+});
+
+// GET /api/users/:id/comments, gets all comments created by a user.
+router.get("/:id/comments", (req, res, next) => {
+  const userId = Number(req.params.id);
+
+  // First, check if the user exists.
+  const user = users.find((user) => user.id === userId);
+
+  // If the user does not exist, send a 404 error.
+  if (!user) {
+    return next(error(404, "User Not Found"));
+  }
+
+  // Provide comments where the userId matches with the user id from the URL.
+  const userComments = comments.filter((comment) => comment.userId === userId);
+
+  res.json({
+    user,
+    comments: userComments,
   });
 });
 

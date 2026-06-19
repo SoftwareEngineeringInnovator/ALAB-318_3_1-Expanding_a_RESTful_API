@@ -44,7 +44,7 @@ router
     } else next(error(400, "Insufficient Data"));
   });
 
-// GET /api/posts/:id/comments, gets all comments specific post.
+ // GET /api/posts/:id/comments, gets all comments specific post.
 router.get("/:id/comments", (req, res, next) => {
   const postId = Number(req.params.id);
 
@@ -63,7 +63,7 @@ router.get("/:id/comments", (req, res, next) => {
     post,
     comments: postComments,
   });
-});
+}); 
 
 router
   .route("/:id")

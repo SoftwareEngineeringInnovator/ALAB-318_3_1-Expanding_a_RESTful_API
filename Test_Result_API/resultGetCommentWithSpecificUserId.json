@@ -1,0 +1,25 @@
+// Method: GET
+// Task get comments with user id at this instance ID # 1
+// Link: http://localhost:3000/api/users/1/comments?api-key=perscholas
+{
+  "user": {
+    "id": 1,
+    "name": "Carey",
+    "username": "cyare23",
+    "email": "cy23@example.com"
+  },
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "postId": 2,
+      "body": "Comment from user 1 on post 2."
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "postId": 3,
+      "body": "Comment from user 1 on post 3."
+    }
+  ]
+}
