@@ -7,9 +7,30 @@ import error from '../utilities/error.js';
 router
   .route("/")
   .get((req, res) => {
+    
     // GET /api/comments. Returns all comments, based on lab the array is empty
-    res.json({comments,
+    const userId = req.query.userId;
+    const postId = req.query.postId;
 
+    // All comments.
+    let filteredComments = comments;
+
+    // If userId exists in the URL, keep only comments from that user.
+    if (userId) {
+      filteredComments = filteredComments.filter(
+        (comment) => comment.userId === Number(userId)
+      );
+    }
+
+    // If postId exists in the URL, keep only comments from that post.
+    if (postId) {
+      filteredComments = filteredComments.filter(
+        (comment) => comment.postId === Number(postId)
+      );
+    }
+
+    res.json({
+      comments: filteredComments,
     });
   })
   

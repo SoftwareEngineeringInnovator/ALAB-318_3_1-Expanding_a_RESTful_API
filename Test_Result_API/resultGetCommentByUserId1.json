@@ -1,0 +1,19 @@
+// Method: GET
+// Task: get comment by id 1
+// Link: http: //localhost:3000/api/comments?api-key=perscholas&postId=1
+{
+  "comments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "postId": 2,
+      "body": "Comment from user 1 on post 2."
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "postId": 3,
+      "body": "Comment from user 1 on post 3."
+    }
+  ]
+}
